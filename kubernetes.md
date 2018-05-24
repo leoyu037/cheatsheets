@@ -76,7 +76,7 @@ Tool for writing kubernetes manifests
 - Environments:
     - `ks env list`
     - `ks env add {env} --context={kubectl context}`
-    - `ks env set {env} --name {name}
+    - `ks env set {env} --name {name}`
     - `ks show {env}`
     - `ks apply {env}`
     - `ks delete {env}`
