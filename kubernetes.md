@@ -4,15 +4,31 @@
 
 ### Core concepts
 
+- Basic objects:
+    - Namespace:
+    - Service:
+    - Volume:
+    - Pod:
+- Controllers (higher-level abstractions):
+    - ReplicaSet:
+    - Deployment:
+    - StatefulSet:
+    - DaemonSet:
+    - Job:
 - Node types:
-    - Master:
+    - Master: monitors/controls node state
+        - kube-api-server: http frontend for the cluster
+        - kube-controller-manager: runs core cluster processes (some examples below)
+            - Node Controller: notices and responds to nodes going down
+            - Replication Controller: maintains correct # of pods
+            - Route Controller, Service Controller, Volume Controller, etc.
+        - kube-scheduler: figures out where to start new pods
+        - etcd: key-value store holding all cluster data
+    - Node: runs deployed containers
+        - kubelet: makes sure containers are running in a pod
+        - kube-proxy: manages networking for the node
     - Bastion: hardened node that serves as a gateway to the rest of the cluster
-
-- Namespace:
-- Deployment:
-- Pod:
-- Replica set:
-- Service:
+- Addons: pods/services that implement cluster features
 
 --------------------------------------------------------------------------------
 
