@@ -29,6 +29,9 @@
         - kube-proxy: manages networking for the node
     - Bastion: hardened node that serves as a gateway to the rest of the cluster
 - Addons: pods/services that implement cluster features
+- Ingress: API object managing external access (typically http) to the services
+  in a cluster
+    - https://kubernetes.io/docs/concepts/services-networking/ingress/
 
 --------------------------------------------------------------------------------
 
