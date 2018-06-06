@@ -4,34 +4,89 @@
 
 ### Core concepts
 
-- Basic objects:
-    - Namespace:
-    - Service:
-    - Volume:
-    - Pod:
-- Controllers (higher-level abstractions):
-    - ReplicaSet:
-    - Deployment:
-    - StatefulSet:
-    - DaemonSet:
-    - Job:
 - Node types:
     - Master: monitors/controls node state
-        - kube-api-server: http frontend for the cluster
-        - kube-controller-manager: runs core cluster processes (some examples below)
-            - Node Controller: notices and responds to nodes going down
-            - Replication Controller: maintains correct # of pods
-            - Route Controller, Service Controller, Volume Controller, etc.
-        - kube-scheduler: figures out where to start new pods
-        - etcd: key-value store holding all cluster data
     - Node: runs deployed containers
-        - kubelet: makes sure containers are running in a pod
-        - kube-proxy: manages networking for the node
     - Bastion: hardened node that serves as a gateway to the rest of the cluster
-- Addons: pods/services that implement cluster features
-- Ingress: API object managing external access (typically http) to the services
-  in a cluster
-    - https://kubernetes.io/docs/concepts/services-networking/ingress/
+- Kubernetes objects
+    - Low level objects:
+        - [Namespace](https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/):
+          a 'virtual cluster' (k8s supports multiple virtual clusters backed by the
+          same physic cluster)
+          - Names of resources are unique within a namespace, but not across
+            namespaces
+        - [Pod](https://kubernetes.io/docs/tutorials/kubernetes-basics/explore/explore-intro/):
+          group of one or more application containers and shared resources,
+          basic unit for all workloads
+          - Represents a "logical host" where the application containers are
+            relatively tightly coupled
+          - Containers in a pod share an IP and port space and can find each
+            other via `localhost`
+          - All containers in a pod always co-located on the same node and
+            co-scheduled
+          - In most cases, pods should be created with controllers rather than
+            directly
+          - [More in-depth reference](https://kubernetes.io/docs/concepts/workloads/pods/pod/)
+        - [Service](https://kubernetes.io/docs/concepts/services-networking/service/):
+          defines a logical set of pods and a policy by which to access them
+          - Every service gets its own `cluster IP`, which is shared by every
+            pod in the service
+          - Services continuously use selectors to determine which pods to
+            apply its rules to
+          - Used to abstract pods, but can also be used to abstract external
+            services (see docs for how to do this)
+        - Volume: storage that is tied to the lifecycle of a pod
+        - PersistentVolume: storage at the cluster level that applications can
+          use
+    - Controllers (high level objects):
+        - Deployment:
+        - ReplicaSet:
+        - StatefulSet:
+        - DaemonSet:
+        - Job:
+    - Configuration:
+      - ConfigMap: used to store non-confidential data (e.g. nginx config), can
+        be mounted as a file or as an env var
+      - Secret: used to store confidential data (e.g. database creds), can be
+        mounted as a file or as an env var
+    - [Ingress](https://kubernetes.io/docs/concepts/services-networking/ingress/):
+      API object managing external access (typically http) to the services in a
+      cluster
+    - Addons: pods/services that implement cluster features
+
+### Kube architecture
+
+- Master:
+    - kube-api-server: http frontend for the cluster
+    - kube-controller-manager: runs core cluster processes (some examples below)
+        - Node Controller: notices and responds to nodes going down
+        - Replication Controller: maintains correct # of pods
+        - Route Controller, Service Controller, Volume Controller, etc.
+    - kube-scheduler: figures out where to start new pods
+    - etcd: key-value store holding all cluster data
+- Node:
+    - kubelet: makes sure containers are running in a pod
+    - kube-proxy: manages networking for the node
+
+### Object metadata
+
+- [Labels](https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/):
+  used to tag and select/filter on objects
+    - Can filter and retrieve k8s objects via command line
+        - ex. `kubectl get pods -l 'environment notin (qa, production),tier=frontend'`
+- [Annotations](https://kubernetes.io/docs/concepts/overview/working-with-objects/annotations/):
+  used to attach arbitrary metadata to k8s objects, annotations aren't
+  filterable
+
+### Service discovery/DNS
+
+If the kube-dns addon is installed, it will continuously watch for new services
+and create DNS entries for them. For example, if you have a service called
+`my-service` in Kubernetes Namespace `my-ns` a DNS record for
+`my-service.my-ns` is created. Pods which exist in the `my-ns` Namespace should
+be able to find it by simply doing a name lookup for `my-service`. Pods which
+exist in other Namespaces must qualify the name as `my-service.my-ns`. The
+result of these name lookups is the cluster IP.
 
 --------------------------------------------------------------------------------
 
