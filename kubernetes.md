@@ -42,14 +42,18 @@
         - [ReplicaSet](https://kubernetes.io/docs/concepts/workloads/controllers/replicaset/):
           ensures that a specified number of pod replicas are running
             - Recommended to use deployments, which manage replicasets and more
-        - Deployment:
+        - [Deployment](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/):
+          provides declarative updates for pods and replicasets
+            - Has builtin support for rolling deployments, but blue/green and
+              canary deployments have to be custom-implemented using multiple
+              deployment objects
         - StatefulSet:
         - [DaemonSet](https://kubernetes.io/docs/concepts/workloads/controllers/daemonset/):
           ensures that all nodes run a copy of a pod
             - Daemonset pod lifecycles are tied to node lifecycles
             - Used for pods that provide machine-level functions like machine
               monitoring and logging
-        - Job:
+        - [Job](https://kubernetes.io/docs/concepts/workloads/controllers/jobs-run-to-completion/):
     - Configuration:
         - ConfigMap: used to store non-confidential data (e.g. nginx config), can
           be mounted as a file or as an env var
