@@ -55,7 +55,7 @@
               monitoring and logging
         - [Job](https://kubernetes.io/docs/concepts/workloads/controllers/jobs-run-to-completion/):
     - Configuration:
-        - ConfigMap: used to store non-confidential data (e.g. nginx config), can
+        - [ConfigMap](https://github.com/leoyu037/cheatsheets/blob/master/kubernetes/configmap.md): used to store non-confidential data (e.g. nginx config), can
           be mounted as a file or as an env var
         - Secret: used to store confidential data (e.g. database creds), can be
           mounted as a file or as an env var
