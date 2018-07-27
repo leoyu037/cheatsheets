@@ -67,8 +67,8 @@ __NOTE__: `[image]` can be as simple as `[image_name]` but can optionally includ
 
 ##### Integrating multiple docker-compose configurations
 
-If you're maintaining multiple projects that each require docker-compose to
-bring up and you frequently need to integrate such projects together, there are
+If you're maintaining multiple projects that each have a docker-compose file
+and you frequently need to integrate such projects together, there are
 several ways to configure the docker networking, but the cleanest way is to
 run the docker-compose configurations under the same project name:
 
