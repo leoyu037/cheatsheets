@@ -4,6 +4,9 @@
 
 ### Core concepts
 
+![High Level
+Concepts](https://github.com/leoyu037/cheatsheets/blob/master/kubernetes/.resources/kubernetes-high-level-concepts.png)
+
 - Node types:
     - Master: monitors/controls node state
     - Node: runs deployed containers
