@@ -147,7 +147,7 @@ Tool for provisioning/managing a kubernetes cluster
 
 --------------------------------------------------------------------------------
 
-## `ksonnet`
+## `ksonnet1 (sucks)
 
 Tool for writing kubernetes manifests
 
