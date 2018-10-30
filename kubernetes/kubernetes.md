@@ -13,11 +13,6 @@ Concepts](https://github.com/leoyu037/cheatsheets/blob/master/kubernetes/.resour
     - Bastion: hardened node that serves as a gateway to the rest of the cluster
 - Kubernetes objects
     - Low level objects:
-        - [Namespace](https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/):
-          a 'virtual cluster' (k8s supports multiple virtual clusters backed by the
-          same physic cluster)
-            - Names of resources are unique within a namespace, but not across
-              namespaces
         - [Pod](https://kubernetes.io/docs/tutorials/kubernetes-basics/explore/explore-intro/):
           group of one or more application containers and shared resources,
           basic unit for all workloads
@@ -30,6 +25,23 @@ Concepts](https://github.com/leoyu037/cheatsheets/blob/master/kubernetes/.resour
             - In most cases, pods should be created with controllers rather than
               created directly
             - [More in-depth reference](https://kubernetes.io/docs/concepts/workloads/pods/pod/)
+        - [ReplicaSet](https://kubernetes.io/docs/concepts/workloads/controllers/replicaset/):
+          ensures that a specified number of pod replicas are running
+            - Recommended to use deployments, which manage replicasets and more
+        - Volume: storage that is tied to the lifecycle of a pod
+        - PersistentVolume: storage at the cluster level that applications can
+          use
+    - High level objects:
+        - [Namespace](https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/):
+          a 'virtual cluster' (k8s supports multiple virtual clusters backed by the
+          same physic cluster)
+            - Names of resources are unique within a namespace, but not across
+              namespaces
+        - [Deployment](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/):
+          provides declarative updates for pods and replicasets
+            - Has builtin support for rolling deployments, but blue/green and
+              canary deployments have to be custom-implemented using multiple
+              deployment objects
         - [Service](https://kubernetes.io/docs/concepts/services-networking/service/):
           defines a logical set of pods and a policy by which to access them
             - Every service gets its own `cluster IP`, which is shared by every
@@ -38,34 +50,22 @@ Concepts](https://github.com/leoyu037/cheatsheets/blob/master/kubernetes/.resour
               apply its rules to
             - Used to abstract pods, but can also be used to abstract external
               services (see docs for how to do this)
-        - Volume: storage that is tied to the lifecycle of a pod
-        - PersistentVolume: storage at the cluster level that applications can
-          use
-    - Controllers (high level objects):
-        - [ReplicaSet](https://kubernetes.io/docs/concepts/workloads/controllers/replicaset/):
-          ensures that a specified number of pod replicas are running
-            - Recommended to use deployments, which manage replicasets and more
-        - [Deployment](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/):
-          provides declarative updates for pods and replicasets
-            - Has builtin support for rolling deployments, but blue/green and
-              canary deployments have to be custom-implemented using multiple
-              deployment objects
-        - StatefulSet:
+        - [Ingress](https://kubernetes.io/docs/concepts/services-networking/ingress/):
+          API object managing external access (typically http) to the services in a
+          cluster
         - [DaemonSet](https://kubernetes.io/docs/concepts/workloads/controllers/daemonset/):
           ensures that all nodes run a copy of a pod
             - Daemonset pod lifecycles are tied to node lifecycles
             - Used for pods that provide machine-level functions like machine
               monitoring and logging
         - [Job](https://kubernetes.io/docs/concepts/workloads/controllers/jobs-run-to-completion/):
+        - StatefulSet:
     - Configuration:
         - [ConfigMap](https://github.com/leoyu037/cheatsheets/blob/master/kubernetes/configmap.md): used to store non-confidential data (e.g. nginx config), can
           be mounted as a file or as an env var
         - Secret: used to store confidential data (e.g. database creds), can be
           mounted as a file or as an env var
-    - [Ingress](https://kubernetes.io/docs/concepts/services-networking/ingress/):
-      API object managing external access (typically http) to the services in a
-      cluster
-    - Addons: pods/services that implement cluster features
+    - Addons: pods/services that implement cluster features (e.g. dashboard, Datadog agent, weave, etc.)
 
 ### Kube architecture
 
