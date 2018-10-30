@@ -43,13 +43,15 @@ Concepts](https://github.com/leoyu037/cheatsheets/blob/master/kubernetes/.resour
               canary deployments have to be custom-implemented using multiple
               deployment objects
         - [Service](https://kubernetes.io/docs/concepts/services-networking/service/):
-          defines a logical set of pods and a policy by which to access them
+          kind of like a load balancer that automatically discovers its pods based on
+          user defined rules
             - Every service gets its own `cluster IP`, which is shared by every
               pod in the service
-            - Services continuously use selectors to determine which pods to
+            - Services continuously use _selectors_ to determine which pods to
               apply its rules to
             - Used to abstract pods, but can also be used to abstract external
               services (see docs for how to do this)
+            - When running on AWS, a _external_ service will auto-provision an ELB
         - [Ingress](https://kubernetes.io/docs/concepts/services-networking/ingress/):
           API object managing external access (typically http) to the services in a
           cluster
