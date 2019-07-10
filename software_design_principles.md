@@ -40,6 +40,11 @@
   on the quality of the code and the quality of the code depends on how the code
   will be tested. Therefore it makes sense for the same person/role/party to be
   responsible for both
+  - Corollary: __Having tests does not guarantee quality code. Quality code
+    guarantees quality code.__
+- __Complex code results in complex tests.__ This is also why I think that
+  "external" testers shouldn't be held responsible for quality--they have very
+  little control over the actual quality of the code.
 - __Fix bugs as quickly as possible.__ Bugs are more expensive to find and fix
   the longer they remain undiscovered. The longer a bug remains undiscovered,
   the harder it will be for the developer to remember the context around the bug
