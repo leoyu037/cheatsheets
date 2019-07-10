@@ -19,9 +19,6 @@
   all at once, they're built in phases out of smaller subsystems
 - __No circular dependencies anywhere.__ Dependency graphs should be strict
   DAGs.  Dependencies flow only in only direction
-- __Validate proofs of concept in the simplest way possible, leaving out any
-  complicating factors initially.__ i.e. build POCs using toys rather than than
-  trying to prove a concept with existing production code
 
 ## Code Style
 - __Readability/maintainability over conciseness/"elegance"/doing as many things
@@ -63,3 +60,9 @@
   and makes it more likely that the components will be salvageable
 - __Personal rule of thumb: 1.5-2 months is a good size for an infra/tooling
   project.__ This may or may not apply to product code
+- __Validate proofs of concept in the simplest way possible, leaving out any
+  complicating factors initially.__ i.e. build POCs using toys rather than than
+  trying to prove a concept with existing production code
+- __Separate R&D/POCs from production implementation.__ Risks should be taken in
+  a low-stakes setting (like a POC/R&D project) rather than when trying to ship
+  something to production.
