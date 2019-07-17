@@ -76,4 +76,7 @@
   something to production.
 
 ## Useful References
-- [Code style](https://medium.com/coding-skills/clean-code-101-meaningful-names-and-functions-bf450456d90c)
+- [Code Style](https://medium.com/coding-skills/clean-code-101-meaningful-names-and-functions-bf450456d90c)
+- [12 Factor App](https://12factor.net/)
+- [Production Readiness Checklist](https://cdn-images-1.medium.com/max/2400/1*-nYI19LZZKDQjdAx0qhlFw.png)
+    - [In More Detail](https://www.gruntwork.io/devops-checklist/)
