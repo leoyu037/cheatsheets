@@ -53,7 +53,10 @@
   and the more likely that additional code will be built in top of the bug. This
   has several implications:
     1. You need a fast feedback loop, which usually implies a fast test suite
-    that runs often and good monitoring
+    that runs often and good monitoring. __Tests need to be as fast as possible.__
+    Not just because we as developers hate waiting to verify our code, but also
+    because iteration speed is probably one of the most important competitive
+    advantages in enterprise software.
     1. Prioritize fixing important bugs. Even non-important bugs can fester and
     grow in annoyance
     1. Write the smallest, fastest, most granular tests possible. Prefer unit
