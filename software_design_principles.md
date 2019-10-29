@@ -81,5 +81,6 @@
 ## Useful References
 - [Code Style](https://medium.com/coding-skills/clean-code-101-meaningful-names-and-functions-bf450456d90c)
 - [12 Factor App](https://12factor.net/)
+- [Packaging Gradient](https://sedimental.org/the_packaging_gradient.html)
 - [Production Readiness Checklist](https://cdn-images-1.medium.com/max/2400/1*-nYI19LZZKDQjdAx0qhlFw.png)
     - [In More Detail](https://www.gruntwork.io/devops-checklist/)
