@@ -17,7 +17,7 @@
   will be to get rid of it. If new requirements can't be fulfilled within the 
   contraints of an existing design, consider whether the system needs to be 
   redesigned before "bolting new functionality on" to the existing system, which
-  weakens and muddles the overall design. Rewriting a system shouldn't be as
+  weakens/muddles/mutates the overall design. Rewriting a system shouldn't be as
   expensive as one might think if it already uses modular components.
 - __Don't try to build complex pieces of software. Look to glue existing single
   responsibility components together in simple ways.__ Bias towards using
