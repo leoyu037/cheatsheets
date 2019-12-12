@@ -5,7 +5,7 @@
 ## General Software Design
 - __Everything is single responsibility__: functions, modules, services, tools.
   Look to solve for a specific case first, then periodically look for ways to
-  make the component more generic
+  make the system more generic.
 - __You should be able to hold all components/concepts of a system in your
   head__: Having too many parts to think about is an indication that the system
   needs to be decomposed into smaller subsystems
@@ -13,12 +13,17 @@
   code, services, data, infrastructure. All pieces should be easily swappable -
   Decoupling over local efficiency and tight integration. "High cohesion, low
   coupling"
+- __Be wary of code rot.__ Address it ASAP. The longer it rots, the harder it
+  will be to get rid of it. If new requirements can't be fulfilled within the 
+  contraints of an existing design, consider whether the system needs to be 
+  redesigned before "bolting new functionality on" to the existing system, which
+  weakens and muddles the overall design.
 - __Don't try to build complex pieces of software. Look to glue existing single
   responsibility components together in simple ways.__ Bias towards using
   preexisting solutions instead of building your own. Big systems aren't built
   all at once, they're built in phases out of smaller subsystems
 - __No circular dependencies anywhere.__ Dependency graphs should be strict
-  DAGs.  Dependencies flow only in only direction
+  DAGs. Dependencies flow only in one direction
 
 ## Code Style
 - __Readability/maintainability over conciseness/"elegance"/doing as many things
@@ -76,7 +81,8 @@
   trying to prove a concept with existing production code
 - __Separate R&D/POCs from production implementation.__ Risks should be taken in
   a low-stakes setting (like a POC/R&D project) rather than when trying to ship
-  something to production.
+  something to production. Only vetted techniques and technologies should be used
+  when shipping to production.
 
 ## Useful References
 - [Code Style](https://medium.com/coding-skills/clean-code-101-meaningful-names-and-functions-bf450456d90c)
