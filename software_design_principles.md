@@ -13,16 +13,16 @@
   code, services, data, infrastructure. All pieces should be easily swappable -
   Decoupling over local efficiency and tight integration. "High cohesion, low
   coupling"
+- __Don't try to build complex pieces of software. Look to glue existing single
+  responsibility components together in simple ways.__ Bias towards using
+  preexisting solutions instead of building your own. Big systems aren't built
+  all at once, they're built in phases out of smaller subsystems
 - __Be wary of code rot.__ Address it ASAP. The longer it rots, the harder it
   will be to get rid of it. If new requirements can't be fulfilled within the 
   contraints of an existing design, consider whether the system needs to be 
   redesigned before "bolting new functionality on" to the existing system, which
   weakens/muddles/mutates the overall design. Rewriting a system shouldn't be as
-  expensive as one might think if it already uses modular components.
-- __Don't try to build complex pieces of software. Look to glue existing single
-  responsibility components together in simple ways.__ Bias towards using
-  preexisting solutions instead of building your own. Big systems aren't built
-  all at once, they're built in phases out of smaller subsystems
+  expensive as one might think if it already uses modular components
 - __No circular dependencies anywhere.__ Dependency graphs should be strict
   DAGs. Dependencies flow only in one direction
 
