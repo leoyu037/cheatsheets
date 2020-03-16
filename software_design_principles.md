@@ -70,6 +70,7 @@
     tests. If you can't, write end to end tests
 
 ## Project Management
+- __Under promise, over deliver.__
 - __Work on one project at a time, scope each project to one thing, deliver
   value incrementally.__ This results in a faster feedback loop, reduces
   complexity and risk of the project completely failing, reduces amount of waste
@@ -77,13 +78,21 @@
   salvageable
 - __Personal rule of thumb: 1.5-2 months is a good size for an infra/tooling
   project.__ This may or may not apply to product code
+- __Try to identify unknown unknowns and mitigate risks upfront.__ Do enough
+  research upfront to prevent timelines from running away because you came across
+  complicating factors later in the project.
 - __Validate proofs of concept in the simplest way possible, leaving out any
   complicating factors initially.__ i.e. build POCs using toys rather than than
   trying to prove a concept with existing production code
 - __Separate R&D/POCs from production implementation.__ Risks should be taken in
   a low-stakes setting (like a POC/R&D project) rather than when trying to ship
   something to production. Only vetted techniques and technologies should be used
-  when shipping to production.
+  when shipping to production
+- __R&D is expensive.__ Doing a unique task or using a new technology for the
+  first time is going to take extra time because there are likely a lot of 
+  unknown unknowns. 4x your time estimate as a rule of thumb
+- __Infrastructure migrations are expensive__ because they are usually unique,
+  one-off tasks with complicated edge cases. Budget accordingly.
 
 ## Useful References
 - [Code Style](https://medium.com/coding-skills/clean-code-101-meaningful-names-and-functions-bf450456d90c)
