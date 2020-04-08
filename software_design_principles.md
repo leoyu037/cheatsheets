@@ -71,7 +71,9 @@
 
 ## Project Management
 - __Under promise, over deliver.__
-- __Only work on the most important problem.__
+- __Only work on the most important problem.__ e.g. Adding that next feature to
+  the search UI might not increase usage metrics if there is an underlying data 
+  quality problem.
 - __Work on one project at a time, scope each project to one thing, deliver
   value incrementally.__ This results in a faster feedback loop, reduces
   complexity and risk of the project completely failing, reduces amount of waste
