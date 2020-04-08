@@ -71,13 +71,18 @@
 
 ## Project Management
 - __Under promise, over deliver.__
+- __Only work on the most important problem.__
 - __Work on one project at a time, scope each project to one thing, deliver
   value incrementally.__ This results in a faster feedback loop, reduces
   complexity and risk of the project completely failing, reduces amount of waste
   if the project fails, and makes it more likely that the components will be
-  salvageable
+  salvageable. A project with a 6 month timeline might have too big of a goal. 
+  There are probably smaller milestones that it can be broken down into, which
+  allow for more incremental delivery of value. Big projects have bigger risks,
+  bigger opportunity costs, and more resistance to course-correcting. There's a
+  difference between a project and a roadmap. 
 - __Personal rule of thumb: 1.5-2 months is a good size for an infra/tooling
-  project.__ This may or may not apply to product code
+  project.__ This may or may not apply to product code.
 - __Try to identify unknown unknowns and mitigate risks upfront.__ Do enough
   research upfront to prevent timelines from running away because you came across
   complicating factors later in the project.
@@ -91,8 +96,19 @@
 - __R&D is expensive.__ Doing a unique task or using a new technology for the
   first time is going to take extra time because there are likely a lot of 
   unknown unknowns. 4x your time estimate as a rule of thumb
+- __Iterating/experimenting quickly is more important than getting it perfect the
+  first time around.__ Many times, the right answer/best solution/best product is 
+  discovered rather than foreseen. Minimize the cost of experiments, and be able
+  to roll back quickly.
+- __Finish projects and do project retrospectives.__ The worst case scenario is
+  spending 90% of the resources and reaping 0% of the value. Reap extra value from
+  each project by learning from what went well and what didn't go well to improve
+  future projects.
 - __Infrastructure migrations are expensive__ because they are usually unique,
   one-off tasks with complicated edge cases. Budget accordingly.
+- __Do not overengineer solutions.__ Solve for the problem at hand. Be proactive
+  about updating the solution if requirements change rather than trying to
+  anticipate requirements ahead of time.
 
 ## Useful References
 - [Code Style](https://medium.com/coding-skills/clean-code-101-meaningful-names-and-functions-bf450456d90c)
