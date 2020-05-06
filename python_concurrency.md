@@ -36,9 +36,10 @@ necessary.
 - More overhead to start separate processes than threads
 
 ## Celery
-- Can run on multiple processors ([worker concurrency setting](https://docs.celeryproject.org/en/stable/userguide/workers.html#concurrency)),
-  or on multiple green threads ([eventlet support](https://docs.celeryproject.org/en/stable/userguide/concurrency/eventlet.html)),
-  or mix both types of workers
+- Can config worker run on multiple processors ([worker concurrency setting](https://docs.celeryproject.org/en/stable/userguide/workers.html#concurrency))
+  or on multiple green threads ([eventlet support](https://docs.celeryproject.org/en/stable/userguide/concurrency/eventlet.html)).
+  Can also mix both types of workers to handle both CPU and I/O-bound
+  workloads separately
 - Can run on multiple hosts
 
 ## References
