@@ -1,6 +1,6 @@
 # Personal Software Design Principles
 
-(TODO: order the principles) In no particular order:
+In no particular order:
 
 ## General Software Design
 - __Everything is single responsibility__: functions, modules, services, tools.
@@ -50,9 +50,9 @@
   person/role/party to be responsible for both
   - Corollary: __Having tests does not guarantee quality code. Quality code
     guarantees quality code.__
-  - Corollary: __Complex code results in complex tests.__ This is also why I
-    think that "external" testers shouldn't be held responsible for
-    quality--they have very little control over the actual quality of the code.
+  - Corollary: __Complex code results in complex tests.__ Same goes for systems.
+    This is also why I think that "external" testers shouldn't be held responsible
+    for quality--they have very little control over the actual quality of the code.
 - __Fix bugs as quickly as possible.__ Bugs are more expensive to find and fix
   the longer they remain undiscovered. The longer a bug remains undiscovered,
   the harder it will be for the developer to remember the context around the bug
