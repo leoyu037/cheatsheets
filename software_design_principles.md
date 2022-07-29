@@ -1,4 +1,4 @@
-# Personal Software Design Principles
+# Personal Software Engineering Principles
 
 In no particular order:
 
